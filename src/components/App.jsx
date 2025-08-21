@@ -101,18 +101,20 @@ export default function App() {
         <div>
           <div className="toggle">
             <div className="label">Mode</div>
-            <button
-              className={c('button', { primary: batchMode })}
-              onClick={() => setBatchMode(true)}
-            >
-              <span className="icon">stacks</span> Batch
-            </button>
-            <button
-              className={c('button', { primary: !batchMode })}
-              onClick={() => setBatchMode(false)}
-            >
-              <span className="icon">swords</span> Versus
-            </button>
+            <div className="modeToggle">
+              <button
+                className={c('button', { primary: batchMode })}
+                onClick={() => setBatchMode(true)}
+              >
+                <span className="icon">stacks</span> Batch
+              </button>
+              <button
+                className={c('button', { primary: !batchMode })}
+                onClick={() => setBatchMode(false)}
+              >
+                <span className="icon">swords</span> Versus
+              </button>
+            </div>
           </div>
         </div>
 

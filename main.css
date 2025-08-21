@@ -803,8 +803,15 @@ summary {
 
 .toggle {
   display: flex;
-  gap: 1px;
+  gap: 8px;
+  flex-direction: column;
   white-space: nowrap;
+}
+
+.toggle .modeToggle {
+  display: flex;
+  justify-content: stretch;
+  flex-wrap: nowrap;
 }
 
 .toggle button {

@@ -138,6 +138,7 @@ header .batchSize input {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding-bottom: 8px;
 }
 
 .selectorWrapper>p {
@@ -173,8 +174,8 @@ header .batchSize input {
 
 .selector {
   position: absolute;
-  top: 54px;
-  width: fit-content;
+  top: 78px;
+  width: 100%;
   background: var(--bg-primary);
   border: 1px solid var(--border-primary);
   border-radius: 12px;

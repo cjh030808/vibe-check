@@ -100,6 +100,7 @@ export default function App() {
 
         <div>
           <div className="toggle">
+            <div className="label">Mode</div>
             <button
               className={c('button', { primary: batchMode })}
               onClick={() => setBatchMode(true)}
@@ -113,7 +114,6 @@ export default function App() {
               <span className="icon">swords</span> Versus
             </button>
           </div>
-          <div className="label">Mode</div>
         </div>
 
         <div
@@ -131,6 +131,7 @@ export default function App() {
               : null
           }
         >
+          <div className="label">Output</div>
           <p>
             {modes[outputMode].emoji} {modes[outputMode].name}
           </p>
@@ -161,7 +162,7 @@ export default function App() {
                 ))}
             </ul>
           </div>
-          <div className="label">Output</div>
+
         </div>
 
         <div
@@ -179,6 +180,7 @@ export default function App() {
               : null
           }
         >
+          <div className="label">Model{batchMode ? '' : 's'}</div>
           <p>
             {batchMode
               ? models[batchModel].name
@@ -212,7 +214,6 @@ export default function App() {
                 ))}
             </ul>
           </div>
-          <div className="label">Model{batchMode ? '' : 's'}</div>
         </div>
 
         {outputMode === 'image' && (
@@ -253,6 +254,7 @@ export default function App() {
               : null
           }
         >
+          <div className="label">Prompt</div>
           <input
             className="promptInput"
             placeholder="Enter a prompt"
@@ -305,11 +307,11 @@ export default function App() {
               ))}
             </ul>
           </div>
-          <div className="label">Prompt</div>
         </div>
 
         {batchMode && (
           <div>
+            <div className="label">Batch size</div>
             <div className="rangeWrap">
               <div className="batchSize">
                 <input
@@ -322,11 +324,12 @@ export default function App() {
                 {batchSize}
               </div>
             </div>
-            <div className="label">Batch size</div>
+
           </div>
         )}
 
         <div>
+          <div className="label">Reset</div>
           <button
             className="circleButton resetButton"
             onClick={() => {
@@ -337,17 +340,16 @@ export default function App() {
           >
             <span className="icon">replay</span>
           </button>
-          <div className="label">Reset</div>
         </div>
 
         {!isIframe && (
           <div>
+            <div className="label">Theme</div>
             <button className="circleButton resetButton" onClick={toggleTheme}>
               <span className="icon">
                 {isDark ? 'light_mode' : 'dark_mode'}
               </span>
             </button>
-            <div className="label">Theme</div>
           </div>
         )}
       </header>

@@ -2,7 +2,8 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import {useEffect, useState, useCallback, useRef} from 'react'
+import React from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import shuffle from 'lodash.shuffle'
 import c from 'clsx'
 import modes from '../lib/modes'
@@ -17,7 +18,7 @@ import {
   setVersusModel,
   reset
 } from '../lib/actions'
-import {isTouch, isIframe} from '../lib/consts'
+import { isTouch, isIframe } from '../lib/consts'
 import FeedItem from './FeedItem'
 import Intro from './Intro'
 
@@ -100,13 +101,13 @@ export default function App() {
         <div>
           <div className="toggle">
             <button
-              className={c('button', {primary: batchMode})}
+              className={c('button', { primary: batchMode })}
               onClick={() => setBatchMode(true)}
             >
               <span className="icon">stacks</span> Batch
             </button>
             <button
-              className={c('button', {primary: !batchMode})}
+              className={c('button', { primary: !batchMode })}
               onClick={() => setBatchMode(false)}
             >
               <span className="icon">swords</span> Versus
@@ -122,25 +123,25 @@ export default function App() {
           onTouchStart={
             isTouch
               ? e => {
-                  e.stopPropagation()
-                  setShowModes(true)
-                  setShowModels(false)
-                  setShowPresets(false)
-                }
+                e.stopPropagation()
+                setShowModes(true)
+                setShowModels(false)
+                setShowPresets(false)
+              }
               : null
           }
         >
           <p>
             {modes[outputMode].emoji} {modes[outputMode].name}
           </p>
-          <div className={c('selector', {active: showModes})}>
+          <div className={c('selector', { active: showModes })}>
             <ul>
               {Object.keys(modes)
                 .filter(key => key !== 'image')
                 .map(key => (
                   <li key={key}>
                     <button
-                      className={c('chip', {primary: key === outputMode})}
+                      className={c('chip', { primary: key === outputMode })}
                       onClick={() => {
                         setOutputMode(key)
                         setShowModes(false)
@@ -170,11 +171,11 @@ export default function App() {
           onTouchStart={
             isTouch
               ? e => {
-                  e.stopPropagation()
-                  setShowModels(true)
-                  setShowModes(false)
-                  setShowPresets(false)
-                }
+                e.stopPropagation()
+                setShowModels(true)
+                setShowModes(false)
+                setShowPresets(false)
+              }
               : null
           }
         >
@@ -182,9 +183,9 @@ export default function App() {
             {batchMode
               ? models[batchModel].name
               : Object.keys(versusModels).filter(key => versusModels[key])
-                  .length + ' selected'}
+                .length + ' selected'}
           </p>
-          <div className={c('selector', {active: showModels})}>
+          <div className={c('selector', { active: showModels })}>
             <ul>
               {Object.keys(models)
                 .filter(key => !models[key].imageOutput)
@@ -244,11 +245,11 @@ export default function App() {
           onTouchStart={
             isTouch
               ? e => {
-                  e.stopPropagation()
-                  setShowPresets(true)
-                  setShowModes(false)
-                  setShowModels(false)
-                }
+                e.stopPropagation()
+                setShowPresets(true)
+                setShowModes(false)
+                setShowModels(false)
+              }
               : null
           }
         >
@@ -265,7 +266,7 @@ export default function App() {
               }
             }}
           />
-          <div className={c('selector', {active: showPresets})}>
+          <div className={c('selector', { active: showPresets })}>
             <ul className="presets wrapped">
               <li>
                 <button
@@ -289,7 +290,7 @@ export default function App() {
                 </button>
               </li> */}
 
-              {presets.map(({label, prompt}) => (
+              {presets.map(({ label, prompt }) => (
                 <li key={label}>
                   <button
                     onClick={() => {

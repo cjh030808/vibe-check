@@ -2,7 +2,8 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import {useEffect, useState, memo} from 'react'
+import React from 'react'
+import { useEffect, useState, memo } from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import * as styles from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import c from 'clsx'
@@ -33,7 +34,7 @@ function ModelOutput({
       byteString.split('').forEach((char, i) => (ia[i] = char.charCodeAt(0)))
 
       const item = new ClipboardItem({
-        [mimeString]: new Blob([ab], {type: mimeString})
+        [mimeString]: new Blob([ab], { type: mimeString })
       })
       navigator.clipboard.write([item]).then(() => {
         setCopied(true)
@@ -60,7 +61,7 @@ function ModelOutput({
 
   return (
     <div className="modelOutput">
-      <div className={c('outputRendering', {flipped: showSource})}>
+      <div className={c('outputRendering', { flipped: showSource })}>
         {outputMode !== 'image' && (
           <div className="back">
             <SyntaxHighlighter
@@ -104,7 +105,7 @@ function ModelOutput({
           )}
         </div>
 
-        <div className={c('outputActions', {active: outputData})}>
+        <div className={c('outputActions', { active: outputData })}>
           {outputMode !== 'image' && (
             <button
               className="iconButton"

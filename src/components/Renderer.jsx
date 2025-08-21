@@ -2,10 +2,11 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import {memo, useEffect, useRef, useState} from 'react'
-import {outputWidth} from '../lib/consts'
+import React from 'react'
+import { memo, useEffect, useRef, useState } from 'react'
+import { outputWidth } from '../lib/consts'
 
-function Renderer({mode, code}) {
+function Renderer({ mode, code }) {
   const iframeRef = useRef(null)
   const [showError, setShowError] = useState(false)
 

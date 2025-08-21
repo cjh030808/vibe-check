@@ -2,7 +2,8 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import {useState} from 'react'
+import React from 'react'
+import { useState } from 'react'
 import shuffle from 'lodash.shuffle'
 import modes from '../lib/modes'
 import {
@@ -42,7 +43,7 @@ export default function Intro() {
 
             <div className="selector presetList">
               <ul className="presets wrapped">
-                {presets[key].map(({label, prompt}) => (
+                {presets[key].map(({ label, prompt }) => (
                   <li key={label}>
                     <button
                       onClick={() => {

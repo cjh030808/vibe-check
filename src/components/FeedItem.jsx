@@ -2,19 +2,20 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
 */
-import {useState} from 'react'
+import React from 'react'
+import { useState } from 'react'
 import c from 'clsx'
-import {addRound, removeRound} from '../lib/actions'
+import { addRound, removeRound } from '../lib/actions'
 import modes from '../lib/modes'
 import ModelOutput from './ModelOutput'
 
-export default function FeedItem({round, onModifyPrompt}) {
+export default function FeedItem({ round, onModifyPrompt }) {
   const [showSystemInstruction, setShowSystemInstruction] = useState(false)
 
   return (
     <li key={round.id}>
-      <div className={c('header', {anchorTop: showSystemInstruction})}>
-        <h3 className={c({anchorTop: showSystemInstruction})}>
+      <div className={c('header', { anchorTop: showSystemInstruction })}>
+        <h3 className={c({ anchorTop: showSystemInstruction })}>
           <div className="chip">
             {modes[round.outputMode].emoji} {modes[round.outputMode].name}
           </div>
